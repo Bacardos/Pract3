@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_calc"
+        style="@style/Toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/value1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:hint="Первое число:"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/value2"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/value2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:hint="Второе число:"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/value1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/value1">
+        <!-- app:layout_constraintEnd_toEndOf="parent"-->
+    <RadioButton
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+" />
+    <RadioButton
+        android:id="@+id/minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-" />
+    <RadioButton
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*" />
+    <RadioButton
+        android:id="@+id/division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/" />
+    <RadioButton
+        android:id="@+id/sqrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sqrt" />
+    <RadioButton
+        android:id="@+id/div1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1/x" />
+</RadioGroup>
+
+
+    <TextView
+        android:id="@+id/res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="1"
+        android:maxLength="10"
+        app:layout_constraintTop_toBottomOf="@id/toggleButton" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ToggleButton"
+        android:textOff="Очистить"
+        android:textOn="Результат"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculate" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
